@@ -11,20 +11,20 @@ public class Project_Josue_Barrera
         int policyNum = keyboard.nextInt();
         keyboard.nextLine(); // buffer
         
-        System.out.print("Enter Provider Name: ");
+      System.out.print("Enter Provider Name: ");
         String providerName = keyboard.nextLine();
 
-        System.out.print("Enter Policyholder's First Name: ");
+      System.out.print("Enter Policyholder's First Name: ");
         String policyHolderFirstName = keyboard.nextLine();
 
-        System.out.print("Enter Policyholder's Last Name: ");
+      System.out.print("Enter Policyholder's Last Name: ");
         String policyHolderLastName = keyboard.nextLine();
 
-        System.out.print("Enter Policyholder's Age: ");
+      System.out.print("Enter Policyholder's Age: ");
         int policyHolderAge = keyboard.nextInt();
         keyboard.nextLine(); // buffer 
 
-        System.out.print("Enter Policyholder's Smoking Status (yes/no): ");
+      System.out.print("Enter Policyholder's Smoking Status (yes/no): ");
         String policyHolderSmokingStatus = keyboard.nextLine();
         // while loop to validate user input 
          while (!policyHolderSmokingStatus.equalsIgnoreCase("yes") && !policyHolderSmokingStatus.equalsIgnoreCase("no"))
@@ -33,10 +33,10 @@ public class Project_Josue_Barrera
                   policyHolderSmokingStatus = keyboard.nextLine();
                }
         
-        System.out.print("Enter Policyholder's Height (in inches): ");
+      System.out.print("Enter Policyholder's Height (in inches): ");
         double policyHolderHeight = keyboard.nextDouble();
 
-        System.out.print("Enter Policyholder's Weight (in pounds): ");
+      System.out.print("Enter Policyholder's Weight (in pounds): ");
         double policyHolderWeight = keyboard.nextDouble();
         
       // creates a new object using the policy class

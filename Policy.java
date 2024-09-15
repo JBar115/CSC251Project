@@ -78,53 +78,52 @@ public class Policy // class header
    
   public int getPolicyHolderAge() 
   {
-        return currentPolicyHolderAge;
-     }
+     return currentPolicyHolderAge;
+  }
 
-    public void setPolicyHolderAge(int policyHolderAge) 
-    {
-        currentPolicyHolderAge = policyHolderAge;
-    }
+  public void setPolicyHolderAge(int policyHolderAge) 
+  {
+      currentPolicyHolderAge = policyHolderAge;
+  }
 
-    public String getPolicyHolderSmokingStatus() 
-    {
-        return currentPolicyHolderSmokingStatus;
-    }
+  public String getPolicyHolderSmokingStatus() 
+  {
+      return currentPolicyHolderSmokingStatus;
+  }
 
-    public void setPolicyHolderSmokingStatus(String policyHolderSmokingStatus) 
-    {
-        currentPolicyHolderSmokingStatus = policyHolderSmokingStatus;
-        
-    }
+  public void setPolicyHolderSmokingStatus(String policyHolderSmokingStatus) 
+  {
+      currentPolicyHolderSmokingStatus = policyHolderSmokingStatus;        
+  }
 
-    public double getPolicyHolderHeight() 
-    {
-        return currentPolicyHolderHeight;
-    }
+  public double getPolicyHolderHeight() 
+  {
+      return currentPolicyHolderHeight;
+  }
 
-    public void setPolicyHolderHeight(double policyHolderHeight) 
-    {
-        currentPolicyHolderHeight = policyHolderHeight;
-    }
+  public void setPolicyHolderHeight(double policyHolderHeight) 
+  {
+      currentPolicyHolderHeight = policyHolderHeight;
+  }
 
-    public double getPolicyHolderWeight() 
-    {
-        return currentPolicyHolderWeight;
-    }
+  public double getPolicyHolderWeight() 
+  {
+      return currentPolicyHolderWeight;
+  }
 
-    public void setPolicyHolderWeight(double policyHolderWeight) 
-    {
-        currentPolicyHolderWeight = policyHolderWeight;
-    } // end of set and get methods
+  public void setPolicyHolderWeight(double policyHolderWeight) 
+  {
+      currentPolicyHolderWeight = policyHolderWeight;
+  } // end of set and get methods
     
     
-    public double bmiCalc() // calculation for the BMI of the policy holder, multiplies the weight by 703 and divides it by the height squared.
-    {
+  public double bmiCalc() // calculation for the BMI of the policy holder, multiplies the weight by 703 and divides it by the height squared.
+  {
       return (currentPolicyHolderWeight * 703 ) / (currentPolicyHolderHeight*currentPolicyHolderHeight);
-    }  
+  }  
     
-    public double policyRate() // calculation for policy rate 
-    {
+  public double policyRate() // calculation for policy rate 
+  {
       double bmi = bmiCalc(); // calls on bmiCalc method to set the BMI 
       double policyRate = 0; 
             
@@ -143,31 +142,30 @@ public class Policy // class header
          policyRate += (bmi - 35) * 20 ;
       }
       
-      return basePolicyFee + policyRate;
-      
-    } 
-       // method to display the details of the policy
-       public void displayPolicyDetails() 
-       {
-        System.out.println("Policy Number: " + getPolicyNum());
-        System.out.println("Provider Name: " + getProviderName());
-        System.out.println("Policyholder's First Name: " + getPolicyHolderFirstName());
-        System.out.println("Policyholder's Last Name: " + getPolicyHolderLastName());
-        System.out.println("Policyholder's Age: " + getPolicyHolderAge());        
-        // if-statment to display smoker status as Non-Smoker or Smoker 
-        if (getPolicyHolderSmokingStatus().equalsIgnoreCase("yes"))
+      return basePolicyFee + policyRate;      
+  } 
+      // method to display the details of the policy
+      public void displayPolicyDetails() 
+      {
+       System.out.println("Policy Number: " + getPolicyNum());
+       System.out.println("Provider Name: " + getProviderName());
+       System.out.println("Policyholder's First Name: " + getPolicyHolderFirstName());
+       System.out.println("Policyholder's Last Name: " + getPolicyHolderLastName());
+       System.out.println("Policyholder's Age: " + getPolicyHolderAge());        
+       // if-statment to display smoker status as Non-Smoker or Smoker 
+       if (getPolicyHolderSmokingStatus().equalsIgnoreCase("yes"))
+          {
+            System.out.println("Policyholder's Smoking Status: Smoker");
+          }
+           else 
            {
-             System.out.println("Policyholder's Smoking Status: Smoker");
+            System.out.println("Policyholder's Smoking Status: Non-Smoker");
            }
-            else 
-            {
-               System.out.println("Policyholder's Smoking Status: Non-Smoker");
-            }
-        System.out.printf("Policyholder's Height: %,.1f inches\n", getPolicyHolderHeight());
-        System.out.printf("Policyholder's Weight: %,.1f pounds\n", getPolicyHolderWeight());
-        System.out.printf("Policyholder's BMI: %,.2f\n ", bmiCalc());
-        System.out.printf("Policy Price: $%.2f\n", policyRate());
-        }   
+       System.out.printf("Policyholder's Height: %,.1f inches\n", getPolicyHolderHeight());
+       System.out.printf("Policyholder's Weight: %,.1f pounds\n", getPolicyHolderWeight());
+       System.out.printf("Policyholder's BMI: %,.2f\n ", bmiCalc());
+       System.out.printf("Policy Price: $%.2f\n", policyRate());
+       }   
    
 } //EOF
 
