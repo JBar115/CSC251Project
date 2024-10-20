@@ -11,6 +11,10 @@ public class Project_Josue_Barrera
       File file = new File ("PolicyInformation.txt"); 
       Scanner inputFile = new Scanner (file);
       
+      //counter for non smoker and smokers
+      int nonSmokers= 0;
+      int smokers = 0; 
+      
       while (inputFile.hasNext())
       {
       int policyNum = inputFile.nextInt();
@@ -23,7 +27,17 @@ public class Project_Josue_Barrera
       String policyHolderSmokingStatus=inputFile.nextLine();
       double policyHolderHeight= inputFile.nextDouble();
       double policyHolderWeight=inputFile.nextDouble();
-      inputFile.nextLine(); // buffer      
+      inputFile.nextLine(); // buffer  
+      
+      if ( policyHolderSmokingStatus.equalsIgnoreCase("smoker"))
+      {
+         smokers++;
+      }
+      else
+      {
+         nonSmokers++;
+      }
+             
       
       //creating object 
       Policy currentPolicy = new Policy (policyNum, providerName, policyHolderFirstName,
@@ -40,6 +54,9 @@ public class Project_Josue_Barrera
       { 
       policy.displayPolicyDetails(); // calls on method to display detailes of the policy 
       }
+      
+      System.out.println("The number of policies with a smoker is: " + smokers);
+      System.out.println("The number of policies with a non-smoker is: " + nonSmokers);
        
    } // end of main method    
 }// EOF
