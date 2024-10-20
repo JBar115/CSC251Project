@@ -19,7 +19,17 @@ public class Policy // class header
    }   
    
    
-   //constructor that sets the intial values of the variables
+    /**
+     * Constructor that sets the initial values of the variables
+     * @param policyNum the policy number
+     * @param providerName the name of provider 
+     * @param policyHolderFirstName the policy holder's first name
+     * @param policyHolderLastName the policy holder's last name
+     * @param policyHolderAge the policy holder's age
+     * @param policyHolderSmokingStatus the smoking status of the policy holder
+     * @param policyHolderHeight the height of the policy holder
+     * @param policyHolderWeight the weight of the policy holder
+     */
    public Policy (int policyNum, String providerName, String policyHolderFirstName, String policyHolderLastName, int policyHolderAge,
                   String policyHolderSmokingStatus, double policyHolderHeight, double policyHolderWeight)
    {
@@ -36,91 +46,164 @@ public class Policy // class header
    /* below will be the list of get and set methods used by the code, they will be in the order they were initilized 
    */
    
+   /**
+   * @return the policy number
+   */
+   
    public int getPolicyNum ()
    {
       return currentPolicyNum;
    }
+   
+   /**
+   *
+   * @param policyNum the policy number
+   */
    
    public void setPolicynum (int policyNum)
    {
       currentPolicyNum = policyNum;
    }
    
+   /**  
+   * @return the provider name 
+   */
+   
    public String getProviderName()
    {
       return currentProviderName;
    }
+   
+   /**
+   * @param providerName the povider name
+   */
    
    public void setProviderName(String providerName )
    {
       currentProviderName = providerName;
    }
    
+   /** 
+   * @return The Policy holders first name 
+   */
+   
    public String getPolicyHolderFirstName()
    {
       return currentPolicyHolderFirstName;
    } 
+   
+   /**
+   *@param policyHolderFirstName the policy holders first name
+   */
    
    public void setPolicyHolderFirstName(String policyHolderFirstName)
    {
       currentPolicyHolderFirstName = policyHolderFirstName;
    }
    
+   /**
+   * @return The policy holders last name 
+   */
+   
    public String getPolicyHolderLastName()
    {
       return currentPolicyHolderLastName;
    }
+   
+   /**
+   *@param policyHolderLastName the policy holders last name 
+   */
    
    public void setPolicyHolderLastName(String policyHolderLastName)
    {
       currentPolicyHolderLastName = policyHolderLastName;
    }
    
+  /**
+  *@return the policy Holders age
+  */ 
+   
   public int getPolicyHolderAge() 
   {
      return currentPolicyHolderAge;
   }
-
+  
+  /**
+  *@param policyHolderAge the policy holders age
+  */
+   
   public void setPolicyHolderAge(int policyHolderAge) 
   {
       currentPolicyHolderAge = policyHolderAge;
   }
+  
+  /**
+  *@return the policy smoking status
+  */ 
 
   public String getPolicyHolderSmokingStatus() 
   {
       return currentPolicyHolderSmokingStatus;
   }
+  
+  /**
+  *@param policyHolderSmokingStatus the policy holder's smoking status 
+  */
 
   public void setPolicyHolderSmokingStatus(String policyHolderSmokingStatus) 
   {
       currentPolicyHolderSmokingStatus = policyHolderSmokingStatus;        
   }
+  
+  /**
+  *@return the policy holder's height
+  */ 
 
   public double getPolicyHolderHeight() 
   {
       return currentPolicyHolderHeight;
   }
+  
+  /**
+  *@param policyHolderHeight the policy holder's height
+  */
 
   public void setPolicyHolderHeight(double policyHolderHeight) 
   {
       currentPolicyHolderHeight = policyHolderHeight;
   }
+  
+   /**
+  *@return the policy holder's weight
+  */ 
 
   public double getPolicyHolderWeight() 
   {
       return currentPolicyHolderWeight;
   }
+  
+  /**
+  *@param policyHolderWeight the policy holder's height
+  */
 
   public void setPolicyHolderWeight(double policyHolderWeight) 
   {
       currentPolicyHolderWeight = policyHolderWeight;
   } // end of set and get methods
     
-    
+ /**
+ * calculates the body mass index of the policy holder
+ * @return the BMI of policy holder 
+ */   
   public double bmiCalc() // calculation for the BMI of the policy holder, multiplies the weight by 703 and divides it by the height squared.
   {
       return (currentPolicyHolderWeight * 703 ) / (currentPolicyHolderHeight*currentPolicyHolderHeight);
-  }  
+  }
+  
+  /**
+  * calculates the rate for the user based of the information provided
+  * @return the policy rate 
+  */  
     
   public double policyRate() // calculation for policy rate 
   {
@@ -144,6 +227,10 @@ public class Policy // class header
       
       return basePolicyFee + policyRate;      
   } 
+  
+      /**
+      * displays details of policy 
+      */
       // method to display the details of the policy
       public void displayPolicyDetails() 
       {
