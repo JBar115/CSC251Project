@@ -250,8 +250,9 @@ public class Policy // class header
            }
        System.out.printf("Policyholder's Height: %,.1f inches\n", getPolicyHolderHeight());
        System.out.printf("Policyholder's Weight: %,.1f pounds\n", getPolicyHolderWeight());
-       System.out.printf("Policyholder's BMI: %,.2f\n ", bmiCalc());
+       System.out.printf("Policyholder's BMI: %,.2f\n", bmiCalc());
        System.out.printf("Policy Price: $%.2f\n", policyRate());
+       System.out.println(); //creates spacing between the various iterations of this method
        }   
    
 } //EOF
