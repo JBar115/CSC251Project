@@ -26,10 +26,11 @@ public class Policy // class header
    {
       policyNumber = pNumber; 
       providerName = pName;
-      policyHolder = holder;
+      policyHolder = new PolicyHolder (holder);
       
       policyCounter++; // added counter here so each time a object is created it will increment count   
-      }
+          System.out.println("Policy created. Total count: " + policyCounter); 
+    }
    
 
    /* below will be the list of get and set methods used by the code
@@ -64,7 +65,7 @@ public class Policy // class header
    */
    public PolicyHolder getPolicyHolder() 
    { 
-      return policyHolder; 
+      return new PolicyHolder (policyHolder); 
    }
    
    /**
@@ -96,7 +97,7 @@ public class Policy // class header
    */   
    public void setPolicyHolder(PolicyHolder holder) 
    { 
-      policyHolder = holder; 
+      policyHolder = new PolicyHolder (holder); 
    }
 
   
@@ -142,15 +143,10 @@ public class Policy // class header
        "Provider Name: %s%n" +
        "%s%n" + // Includes the PolicyHolder's toString() output
        "Policy Price: $%.2f",
-       policyNumber, providerName, policyHolder.toString(), policyRate()
-    );
-}
-   
-   
-  
-
+       policyNumber, providerName, policyHolder.toString(), policyRate());
+                                                        
+      } 
      
 } //EOF
-
    
    

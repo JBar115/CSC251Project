@@ -56,10 +56,15 @@ public class Project_Josue_Barrera
       //creating objects
          PolicyHolder holder = new PolicyHolder (firstName, lastName, age, smokingStatus, height, weight);
          Policy policy = new Policy (policyNumber, providerName, holder);
-      
-      
-         policyList.add(new Policy (policyNumber, providerName, holder)); 
+     
+         policyList.add(policy); //edited to work with policy counter  
          
+        if (holder.getSmokingStatus().equalsIgnoreCase("smoker")) //moved inside to while loop to stay in scope 
+        {
+       
+            numSmokers++;
+           }
+        
          
          
       }
@@ -69,27 +74,14 @@ public class Project_Josue_Barrera
       //print out information about each Policy object
       for(Policy policy : policyList)
       { 
-         //display information about the Policy
-         System.out.println("Policy Number: " + policy.getPolicyNumber());
-         System.out.println("Provider Name: " + policy.getProviderName());
-         System.out.println("Policyholder's First Name: " + policyHolder.getFirstName());
-         System.out.println("Policyholder's Last Name: " + policyHolder.getLastName());
-         System.out.println("Policyholder's Age: " + policyHolder.getAge());
-         System.out.println("Policyholder's Smoking Status: " + policyHolder.getSmokingStatus());
-         System.out.println("Policyholder's Height: " + policyHolder.getHeight() + " inches");
-         System.out.println("Policyholder's Weight: " + policyHolder.getWeight() + " pounds");
-         System.out.printf("Policyholder's BMI: %.2f\n", policyHolder.bmiCalc());
-         System.out.printf("Policy Price: $%.2f\n", policyHolder.policyRate());
-         System.out.println();
-         
-         if(policyHolder.getSmokingStatus().equalsIgnoreCase("smoker"))
-         {//keep track of the number of smokers
-            numSmokers++;
-         }      
+         System.out.println(policy);  //to string method from policy class which contains the to string method from Policy holder class (pretty cool :))           
+         System.out.println();         
+      
       }
-         //print out the number of smokers and non-smokers
+      //print out the number of smokers and non-smokers
+      System.out.println();
+      System.out.println("Total Policies Created: " + Policy.getPolicyCounter());
       System.out.println("The number of policies with a smoker is: " + numSmokers);
-      System.out.println("The number of policies with a non-smoker is: " + (policyList.size() - numSmokers) );
-   
+      System.out.println("The number of policies with a non-smoker is: " + (policyList.size() - numSmokers) );   
    }       
 }// EOF

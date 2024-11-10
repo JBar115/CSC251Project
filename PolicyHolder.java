@@ -16,6 +16,19 @@ class PolicyHolder
       height = 0; 
       weight= 0;    
    }
+   
+   public PolicyHolder (PolicyHolder obj)
+     {
+         //no acesor method needed inside ones own class
+    
+        firstName = obj.firstName;
+        lastName = obj.lastName;
+        smokingStatus = obj.smokingStatus;
+        age = obj.age; 
+        height = obj.height;
+        weight = obj.weight;           
+    }
+
   
   /**
    Constructor that accepts arguments for each field
