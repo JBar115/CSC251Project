@@ -6,6 +6,9 @@ public class Policy // class header
    private String providerName;
    private PolicyHolder policyHolder; // field for policyHolder class containing policy holder info 
    
+ //counter
+   private static int policyCounter = 0;
+   
 //constructors 
    public Policy() // No-Arg constructor  
    {
@@ -19,12 +22,14 @@ public class Policy // class header
    @param pNumber The Policy number
    @param pName The Policy Provider's Name 
    */
-   public Policy(String pNumber, String pName, PolicyHolder holder)    {
+   public Policy(String pNumber, String pName, PolicyHolder holder)    
+   {
       policyNumber = pNumber; 
       providerName = pName;
       policyHolder = holder;
       
-   }
+      policyCounter++; // added counter here so each time a object is created it will increment count   
+      }
    
 
    /* below will be the list of get and set methods used by the code
@@ -61,6 +66,14 @@ public class Policy // class header
    { 
       return policyHolder; 
    }
+   
+   /**
+   *  @return the amount of policies created 
+   */
+   public static int getPolicyCounter() 
+   {
+         return policyCounter;
+      }
  
    public void setPolicyNumber (String pNumber)
    {
