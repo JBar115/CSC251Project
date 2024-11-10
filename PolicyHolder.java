@@ -1,16 +1,17 @@
 class PolicyHolder
 {
    // fields 
-   private String FirstName, LastName;
+   private String firstName, lastName;
    private int age;                              
    private String smokingStatus;
    private double height, weight;  
    
+   //constructors below
    
    //No-ARG constructor 
    public PolicyHolder()
    {    
-      FirstName = " "; LastName = " "; smokingStatus = ""; 
+      firstName = " "; lastName = " "; smokingStatus = ""; 
       age = 18; 
       height = 0; 
       weight= 0;    
@@ -28,8 +29,8 @@ class PolicyHolder
 
    public PolicyHolder(String fName, String lName,int a, String sStatus, double h, double w) 
    {
-      FirstName = fName; 
-      LastName = lName; 
+      firstName = fName; 
+      lastName = lName; 
       age = a; 
       smokingStatus = sStatus; 
       height = h; 
@@ -41,12 +42,12 @@ class PolicyHolder
 
    public String getFirstName()
    {
-      return FirstName;
+      return firstName;
    } 
    
    public String getLastName()
    {
-      return LastName;
+      return lastName;
    }
    
    public int getAge()
@@ -77,7 +78,7 @@ class PolicyHolder
    
    public void setFirstName(String fName)
    {
-      FirstName = fName;
+      firstName = fName;
    }
    
    /**
@@ -86,7 +87,7 @@ class PolicyHolder
    
    public void setLastName(String lName)
    {
-      LastName = lName;
+      lastName = lName;
    }
    
    /**
@@ -138,36 +139,19 @@ class PolicyHolder
    }
    
    
-   
-   
-
-
-
-
-
-
-   
-   
-   
-   
-
-
-
-
-
-
-   
-   
-
-
-
-
-
-
-
-
-
-
-
-
+   //to string method 
+      public String toString() 
+      {
+         return String.format
+         (
+         "Policyholder's First Name: %s%n" +
+         "Policyholder's Last Name: %s%n" +
+         "Policyholder's Age: %d%n" +
+         "Policyholder's Smoking Status (Y/N): %s%n" +
+         "Policyholder's Height: %.1f inches%n" +
+         "Policyholder's Weight: %.1f pounds%n" +
+         "Policyholder's BMI: %.2f"
+         , firstName, lastName, age, smokingStatus, height, weight, bmiCalc()
+         );
+      }
 }
